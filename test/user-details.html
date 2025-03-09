@@ -12,12 +12,17 @@
         }
 
         .user-details-container {
-            padding: 20px;
-            margin: 10px;
-            background: linear-gradient(to right, #49c662, #b6091e);
-            box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(to right, #d0d5d1, #888383);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
-            width: 100%;
+            width: 90%;
         }
 
         .user-details-container p {
@@ -33,33 +38,39 @@
         .button-container button {
             width: 90%;
             padding: 15px;
-            background: #4CAF50;
+            background: #a2a8a2;
             color: white;
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
             border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .button-container button:hover {
-            background: #329736;
+            background: #819782;
         }
 
         .posts-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
             gap: 10px;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .post {
-            width: 22%;
             padding: 10px;
-            background: linear-gradient(to right, #49c662, #b6091e);
+            background: linear-gradient(to right, #d0d5d1, #888383);
             border-radius: 5px;
             box-sizing: border-box;
             border: 1px solid #ddd;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .button-container-back {
@@ -68,17 +79,42 @@
             justify-content: center;
             align-items: center;
             border-radius: 15px;
-            background: Linear-gradient(to right,green, greenyellow);
+            background: Linear-gradient(to right, #757775, #a5bc90);
             height: 40px;
             color: #dddddd;
             cursor: pointer;
-            margin: 0 auto;
+            margin: 10px auto;
             font-size: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .button-container-back:hover{
-            background: Linear-gradient(to right, #014301, #62a102);
+            background: Linear-gradient(to right, #6d706d, #92a576);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+        h1{
+
+            display: flex;
+            justify-content: space-around;
+
+        }
+        .post-details-btn {
+            width: 100%;
+            padding: 10px;
+            font-weight: bold;
+            background: Linear-gradient(to right, #757775, #fefffd);
+            color: #1e1d1d;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-details-btn:hover {
+            background: #929592;
+        }
+
 
     </style>
 </head>
@@ -143,6 +179,7 @@
 
                     const postButton = document.createElement('button');
                     postButton.textContent = 'Post Details';
+                    postButton.classList.add('post-details-btn');
                     postButton.onclick = function () {
                         window.location.href = `post-details.html?id=${post.id}`;
                     };

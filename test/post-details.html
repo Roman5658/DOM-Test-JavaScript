@@ -14,16 +14,17 @@
 
         .post-details-container {
             margin: 0 auto;
+            padding: 10px;
             height: 200px;
             border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: linear-gradient(to right, #49c662, #b6091e);
-            box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, #d0d5d1, #888383);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
-            width: 100%;
+            width: 90%;
         }
 
         .post-details-container p {
@@ -36,13 +37,15 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .comment {
             padding: 10px;
-            background: linear-gradient(to right, #49c662, #b6091e);
+            background: linear-gradient(to right, #d0d5d1, #888383);
             border-radius: 5px;
             border: 1px solid #ddd;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .button-container {
@@ -53,16 +56,17 @@
         .button-container button {
             width: 90%;
             padding: 15px;
-            background: #4CAF50;
+            background: #828782;
             color: white;
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
             border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .button-container button:hover {
-            background: #329736;
+            background: #6b6e6b;
         }
 
         .button-container-back {
@@ -71,19 +75,30 @@
             justify-content: center;
             align-items: center;
             border-radius: 15px;
-            background: Linear-gradient(to right, green, greenyellow);
+            background: Linear-gradient(to right, #676867, #4c5a35);
             height: 40px;
             color: #dddddd;
             cursor: pointer;
-            margin: 0 auto;
+            margin: 10px auto;
             font-weight: bold;
             font-size: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
+
         }
 
         .button-container-back:hover {
-            background: Linear-gradient(to right, #014301, #62a102);
+            background: Linear-gradient(to right, #6b6c6b, #455132);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
 
         }
+        h1{
+
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+
 
     </style>
 </head>
@@ -101,17 +116,15 @@
 <button class="button-container-back" onclick="goBack()">Back to Users</button>
 
 
+
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
-
-    // Получаем информацию о посте
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
         .then(response => response.json())
         .then(post => {
             const postDetailsDiv = document.getElementById('post-details');
 
-            // Отображаем информацию о посте
             const postTitle = document.createElement('h2');
             postTitle.textContent = post.title;
 
