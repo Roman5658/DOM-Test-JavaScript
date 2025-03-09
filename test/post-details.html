@@ -13,8 +13,13 @@
         }
 
         .post-details-container {
-            padding: 20px;
-            margin: 10px;
+            margin: 0 auto;
+            height: 200px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             background: linear-gradient(to right, #49c662, #b6091e);
             box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -59,13 +64,14 @@
         .button-container button:hover {
             background: #329736;
         }
+
         .button-container-back {
             width: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 15px;
-            background: Linear-gradient(to right,green, greenyellow);
+            background: Linear-gradient(to right, green, greenyellow);
             height: 40px;
             color: #dddddd;
             cursor: pointer;
@@ -74,7 +80,7 @@
             font-size: 20px;
         }
 
-        .button-container-back:hover{
+        .button-container-back:hover {
             background: Linear-gradient(to right, #014301, #62a102);
 
         }
@@ -146,6 +152,7 @@
             })
             .catch(error => console.error('Error fetching comments:', error));
     });
+
     function goBack() {
         window.location.href = 'index.html';
     }
