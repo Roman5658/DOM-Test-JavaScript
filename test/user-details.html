@@ -150,10 +150,15 @@
             const userAddress = document.createElement('p');
             userAddress.textContent = `Address: ${user.address.street},
             City: ${user.address.city},
-            Zipcode: ${user.address.zipcode}`;
+            Zipcode: ${user.address.zipcode},
+            suite: ${user.address.suite},
+            geo: ${user.address.geo.lat}, ${user.address.geo.lng}`;
+
 
             const userCompany = document.createElement('p');
-            userCompany.textContent = `Company: ${user.company.name}`;
+            userCompany.textContent = `website: ${user.website}`;
+
+
 
             userDetailsDiv.appendChild(userName);
             userDetailsDiv.appendChild(userEmail);
